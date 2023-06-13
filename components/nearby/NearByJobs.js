@@ -1,17 +1,19 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator  } from 'react-native'
-import { useRouter } from 'expo-router'
+
 
 import styles from './nearByJobs.style'
 
-import { COLORS, SIZES } from '../../../constants'
+import { COLORS, SIZES } from '../../constants'
 
-import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard' 
+import NearbyJobsCards from '../cards/nearby/NearByJobsCards' 
 
-import useFetch  from '../../../Hook/useFetch'
+import useFetch  from '../../hook/useFetch'
 
 const NearByJobs = () => {
-    const router = useRouter();
+
+    //const router = useRouter();
+
     const { data, isLoading, error } = useFetch('search', { query:'React developer', num_pages: '1'});
   
     return (

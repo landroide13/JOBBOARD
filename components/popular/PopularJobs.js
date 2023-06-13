@@ -1,15 +1,15 @@
 import { useState} from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
-import { useRouter } from 'expo-router'
+
 
 import styles from './popularJobs.style'
-import { COLORS, SIZES } from '../../../constants'
-import PopularJobCard from '../../common/cards/popular/PopularJobCard' 
+import { COLORS, SIZES } from '../../constants'
+import PopularJobCard from '../cards/popular/PopularJobCard' 
 
-import useFetch  from '../../../Hook/useFetch'
+import useFetch  from '../../hook/useFetch'
 
 const PopularJobs = () => {
-    const router = useRouter();
+    //const router = useRouter();
     const { data, isLoading, error } = useFetch('search', { query:'React developer', num_pages: '1'});
   
     const [selectedJob, setSelectedJob] = useState();

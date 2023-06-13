@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import { checkImageURL } from '../../../../utils'
+import { checkImageURL } from '../../../utils'
 
-import styles from './nearbyjobcard.style'
+import styles from './nearByJobs.styles'
 
-const NearByJobs = ({ job, handleNavigate }) => {
+const NearByJobsCards = ({ job, handleNavigate }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
         <TouchableOpacity style={styles.logoContainer}>
@@ -21,4 +21,4 @@ const NearByJobs = ({ job, handleNavigate }) => {
   )
 }
 
-export default NearByJobs
+export default NearByJobsCards
