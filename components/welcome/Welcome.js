@@ -5,10 +5,13 @@ import { icons, SIZES } from '../../constants'
 
 import styles from './welcome.style'
 
+import { useNavigation } from '@react-navigation/native';
+
 const JobTypes = ["Full-Time", "Part-Time", "Contractor"]
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
-    //const router = useRouter();
+
+    const navigation = useNavigation()
 
     const[activeJobType, setActiveJobType] = useState('Full-Time')
   
@@ -38,7 +41,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
               style={styles.tab(activeJobType, item)} 
               onPress={() => {
               setActiveJobType(item)
-              router.push(`/search/${item}`)
+              navigation.navigate(`/search/${item}`)
             }}>
               <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
